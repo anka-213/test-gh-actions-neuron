@@ -4,7 +4,7 @@ on:
   push:
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
     - uses: cachix/install-nix-action@v8
@@ -16,12 +16,12 @@ jobs:
         # signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         # Only needed for private caches
         # authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - uses: hmarr/debug-action@v1.0.0
-    - run: echo $PATH; which nix-env || echo "no nix-env"; which nix-store || echo "no nix-store"
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v2
-    - run: ls /nix/var/nix/profiles/default/bin/
-    - run: gunzip < neuron-full-closure.export.gz | nix-store --import
+    # - uses: hmarr/debug-action@v1.0.0
+    # - run: echo $PATH; which nix-env || echo "no nix-env"; which nix-store || echo "no nix-store"
+    # - name: Setup tmate session
+    #   uses: mxschmitt/action-tmate@v2
+    # - run: ls /nix/var/nix/profiles/default/bin/
+    - run: gunzip < neuron-full-closure.export.gz | nix-store --import
     # # This builds neuron, as well as run tests
     # - run: nix-env -if "https://github.com/srid/neuron/archive/736107f8dd12ed514b6956c9e938437b5bd5fa49.tar.gz"
     # - name: Debug Action
