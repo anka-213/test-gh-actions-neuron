@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: cachix/install-nix-action@v8
-    - run: gunzip < neuron-full-closure.export.gz | nix-store --import
+    - run: gunzip < neuron-full-closure.export.gz | /nix/var/nix/profiles/default/bin/nix-store --import
     # # This also runs nix-build.
     # - uses: cachix/cachix-action@v6
     #   with:
@@ -20,7 +20,7 @@ jobs:
     # - run: nix-env -if "https://github.com/srid/neuron/archive/736107f8dd12ed514b6956c9e938437b5bd5fa49.tar.gz"
     # - name: Debug Action
     #   uses: hmarr/debug-action@v1.0.0
-    - run: nix-store -qR $(which neuron)
+    # - run: /nix/var/nix/profiles/default/bin/nix-store -qR $(which neuron)
     - name: Build site
       run: /nix/store/pz08vmgv1y1vlvx0jfjwdwjvhs06246d-neuron-0.5.5.1/bin/neuron -d . rib
     # - name: push
