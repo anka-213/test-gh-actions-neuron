@@ -1,7 +1,7 @@
 ---
 date: "2020-06-17"
 tags:
-  - Legal Issues
+  - legal_issues
 ---
 
 # Fundamental Limits on Automation of Legal Reasoning
@@ -24,6 +24,8 @@ an answer is "strange" and look for uncertainty. Indeed, there will usually not
 even be a way for the user to specify the type of vehicle, because the inputs
 will be rerstricted, so the automated system can't even learn the things that it
 would need to know in order to recognize that it was badly designed.
+
+(For a longer discussion, see [No Vehicles in the Park](https://digitalcommons.law.seattleu.edu/cgi/viewcontent.cgi?article=1623&context=sulr).)
 
 ### Mitigations
 * Susskind suggested limiting the users of <legal_expert_systems> to lawyers, so that
